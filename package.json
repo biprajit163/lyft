@@ -1,0 +1,27 @@
+{
+  "name": "lyft-apprenticeship",
+  "version": "1.0.0",
+  "description": "> Create a POST request to the route \"/test\" which accepts one argument \"string_to_cut\" and return a JSON object with the key \"return_string\" and a string containing every third letter from the original string",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biprajit163/lyft-apprenticeship.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biprajit163/lyft-apprenticeship/issues"
+  },
+  "homepage": "https://github.com/biprajit163/lyft-apprenticeship#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
