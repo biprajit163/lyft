@@ -1,28 +1,38 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/:str', async (req, res, next) => {
-    try {
-        let myStr = await req.params.str;
 
-        res.send({
-            "myStr": myStr
-        });
+router.get('/', async (req, res, next) => {
+    try {
+        await res.send(`
+            <h1>Welcome to the test route</h1>
+        `);
     } catch {
-        res.send("I'm sorry there was an error");
+        res.send("Something went wrong")
     }
 });
 
 
-router.post('/result', async (req, res, next) => { 
+router.post('/', async (req, res, next) => { 
+    let counter = 0;
+    let returnString = "";
+
     try {
-        let result = await req.params.str;
+        let stringToCut = req.body.string_to_cut;
+
+        for(let i=0; i < stringToCut.length; i++) {
+            counter++;
+
+            if(counter % 3 === 0) {
+                returnString += stringToCut[i];
+            }
+        }
 
         res.send({
-            "result": result + "two"
-        });
+            "return_string": `${returnString}`
+        })
     } catch {
-        res.send("I am sorry but we recieved no data");
+        res.send("I am sorry something went wrong with recieving the data");
     }
 });
 
