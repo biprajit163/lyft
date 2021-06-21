@@ -2,6 +2,7 @@
 
 const express = require('express');
 const app = express();
+const path = require('path');
 const port = process.env.port || 4444;
 
 const stringTestRouters = require('./routes/stringTest');
@@ -12,9 +13,7 @@ app.use('/test', stringTestRouters);
 
 
 app.get('/', (req, res, next) => {
-    res.send(`
-        <h1>Welcome to your app</h1>
-    `);
+    res.sendFile(path.join(__dirname, './html/index.html'));
 })
 
 

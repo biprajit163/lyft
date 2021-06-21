@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body style="
+    text-align: center;
+">
+    <form id="user-input-form" method="POST" action="/test">
+        <label for="string_to_cut">String Input</label>
+        <input type="text" name="string_to_cut" id="string_to_cut"/>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        const myForm = document.getElementById('user-input-form');
+        const userInput = document.getElementById('#string_to_cut').innerText;
+        const formData = new FormData(); 
+
+        myForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formData.append("string_to_cut", userInput);
+
+            fetch("http://localhost:4444/test", {
+                method: 'POST',
+                body: formData
+            })
+        });
+    </script>
+</body>
+</html>

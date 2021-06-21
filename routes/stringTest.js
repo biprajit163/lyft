@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 
 router.get('/', async (req, res, next) => {
     try {
-        await res.send(`
-            <h1>Welcome to the test route</h1>
-        `);
+        await res.sendFile(path.join(__dirname, '../html/testPage.html'));
     } catch {
         res.send("Something went wrong")
     }
@@ -19,7 +18,6 @@ router.post('/', async (req, res, next) => {
 
     try {
         let stringToCut = req.body.string_to_cut;
-
         for(let i=0; i < stringToCut.length; i++) {
             counter++;
 
@@ -27,7 +25,6 @@ router.post('/', async (req, res, next) => {
                 returnString += stringToCut[i];
             }
         }
-
         res.send({
             "return_string": `${returnString}`
         })
