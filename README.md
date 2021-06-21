@@ -10,6 +10,7 @@
 ### Installation
 - clone the repo into a code editor 
 - run `npm install` to install all the dependencies
+- run `npm run start` to get the servers working
 - go to port `http://localhost:4444`
 - you can go to route `/test` or click the link to be taken to that route
 - enter a string into the form and get your `return_string`
