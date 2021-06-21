@@ -1,12 +1,15 @@
 # Lyft Apprenticeship Coding Assessment 
 
 ### Description:
-> Create a POST request to the route "/test" which accepts one argument "string_to_cut" and return a JSON object with the key "return_string" and a string containing every third letter from the original string
-
-ex: 
-- POST {"string_to_cut": "iamyourlyftdriver"} will return {"return_string": "muydv"}
+> This application allows the user to input a string into a form which is then procesed through a POST request and then returns a JSON object with the key `return_string` and the value of a string that contains every third letter from the users original inputed string.
 
 ### Technologies used:
-- JavaScript
 - Node.js
 - Express.js
+
+### Installation
+- clone the repo into a code editor 
+- run `npm install` to install all the dependencies
+- go to port `http://localhost:4444`
+- you can go to route `/test` or click the link to be taken to that route
+- enter a string into the form and get your `return_string`

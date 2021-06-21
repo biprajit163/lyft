@@ -14,20 +14,5 @@
         <input type="text" name="string_to_cut" id="string_to_cut"/>
         <button type="submit">submit</button>
     </form>
-    <script>
-        const myForm = document.getElementById('user-input-form');
-        const userInput = document.getElementById('#string_to_cut').innerText;
-        const formData = new FormData(); 
-
-        myForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            formData.append("string_to_cut", userInput);
-
-            fetch("http://localhost:4444/test", {
-                method: 'POST',
-                body: formData
-            })
-        });
-    </script>
 </body>
 </html>
