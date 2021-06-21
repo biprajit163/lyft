@@ -1,4 +1,4 @@
-# Lyft Apprenticeship Coding Assessment 
+# Application Description and Installation
 
 ### Description:
 > This application allows the user to input a string into a form which is then procesed through a POST request and then returns a JSON object with the key `return_string` and the value of a string that contains every third letter from the users original inputed string.
